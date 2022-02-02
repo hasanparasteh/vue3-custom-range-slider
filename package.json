@@ -1,24 +1,45 @@
 {
-  "name": "vue3-custom-range-slider-1",
+  "name": "vue3-custom-range-slider",
+  "author": "Hasan Parasteh",
+  "description": "Slider component for vue3, with support for custom values",
+  "keywords": [
+    "range",
+    "slider",
+    "component",
+    "custom values",
+    "Vue"
+  ],
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-slider": "vue-cli-service build --target lib --name vue-custom-range-slider ./src/components/CustomRangeSlider.vue && copyfiles --flat public/vue-custom-range-slider.scss dist"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
+  "license": "MIT",
+  "homepage": "https://github.com/hasanparasteh/vue3-custom-range-slider",
+  "bugs": "https://github.com/hasanparasteh/vue3-custom-range-slider/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hasanparasteh/vue3-custom-range-slider.git"
+  },
+  "main": "dist/vue-custom-range-slider.common.js",
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "copyfiles": "2.4.1",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "sass": "^1.49.7",
+    "sass-loader": "^10.2.1"
   },
   "eslintConfig": {
     "root": true,
@@ -34,6 +55,18 @@
     },
     "rules": {}
   },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",
